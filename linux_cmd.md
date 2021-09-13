@@ -359,3 +359,12 @@ export TERM=xterm-256color
 export SHELL=bash
 stty rows 26 columns 238
 ```
+
+## Bash Helpers
+
+### AWK
+
+```cat sql.txt | awk 'BEGIN{RS=","}{$1=$1}1'
+   cat sql.txt | awk -F ':' '{print $1}'
+   cat sql.txt | awk '{split($0,a,":"); print a[3]; print a[2]; print a[1]}'
+```
